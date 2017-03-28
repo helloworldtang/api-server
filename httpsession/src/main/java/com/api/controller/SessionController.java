@@ -24,7 +24,7 @@ public class SessionController implements Serializable {
      */
     private static LongAdder longAdder = new LongAdder();
 
-    @RequestMapping("/")
+    @RequestMapping("/random")
     public ResponseEntity<Long> defaultIndex() {
         longAdder.increment();
         return ResponseEntity.ok(longAdder.longValue());
