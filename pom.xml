@@ -9,6 +9,7 @@
     <modules>
         <module>quartz</module>
         <module>httpsession</module>
+        <module>mybatis-spring-mapper-pagehelper</module>
     </modules>
     <packaging>pom</packaging>
 
