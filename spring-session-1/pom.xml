@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>httpsession-1</artifactId>
+    <artifactId>spring-session-1</artifactId>
 
     <dependencies>
         <dependency>
