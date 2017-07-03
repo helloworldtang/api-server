@@ -5,12 +5,13 @@
 
     <groupId>com.api</groupId>
     <artifactId>api-server</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <modules>
         <module>quartz</module>
         <module>spring-session-1</module>
         <module>spring-session-2</module>
         <module>mybatis-spring-mapper-pagehelper</module>
+        <module>elastic-search</module>
     </modules>
     <packaging>pom</packaging>
 
