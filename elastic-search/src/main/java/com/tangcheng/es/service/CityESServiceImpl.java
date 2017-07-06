@@ -1,6 +1,8 @@
 package com.tangcheng.es.service;
 
 import com.tangcheng.es.domain.City;
+import com.tangcheng.es.query.CityQuery;
+import com.tangcheng.es.query.PageQuery;
 import com.tangcheng.es.repository.CityRepository;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.index.query.functionscore.FunctionScoreQueryBuilder;
@@ -59,4 +61,31 @@ public class CityESServiceImpl implements CityESService {
         Page<City> searchPageResults = cityRepository.search(searchQuery);
         return searchPageResults.getContent();
     }
+
+    @Override
+    public List<City> findByDescriptionAndScore(CityQuery cityQuery) {
+        return cityRepository.findByDescriptionAndScore(cityQuery.getDescription(), cityQuery.getScore());
+    }
+
+    @Override
+    public List<City> findByDescriptionOrScore(CityQuery cityQuery) {
+        return cityRepository.findByDescriptionOrScore(cityQuery.getDescription(), cityQuery.getScore());
+    }
+
+    @Override
+    public List<City> findByDescription(String description, PageQuery pageQuery) {
+        return cityRepository.findByDescription(description, pageQuery.getPageable()).getContent();
+    }
+
+    @Override
+    public List<City> findByDescriptionNot(String description, PageQuery pageQuery) {
+        return cityRepository.findByDescriptionNot(description, pageQuery.getPageable()).getContent();
+    }
+
+    @Override
+    public List<City> findByDescriptionLike(String description, PageQuery pageQuery) {
+        return cityRepository.findByDescriptionLike(description,pageQuery.getPageable()).getContent();
+    }
+
+
 }

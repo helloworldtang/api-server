@@ -5,6 +5,10 @@ import org.springframework.data.elasticsearch.annotations.Document;
 
 /**
  * api-server
+ * 注意
+ * a. City 属性名不支持驼峰式。
+ * b. indexName 配置必须是全部小写，不然会出异常。
+ * org.elasticsearch.indices.InvalidIndexNameException: Invalid index name [provinceIndex], must be lowercase
  *
  * @version : 2017-07-03  19:56
  */
@@ -14,6 +18,7 @@ public class City {
     private Long id;
     private String name;
     private String description;
+    private Integer score;
 
     public Long getId() {
         return id;
@@ -37,5 +42,13 @@ public class City {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Integer getScore() {
+        return score;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
     }
 }
