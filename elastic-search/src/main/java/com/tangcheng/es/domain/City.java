@@ -3,6 +3,8 @@ package com.tangcheng.es.domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
+import java.util.Date;
+
 /**
  * api-server
  * 注意
@@ -19,6 +21,7 @@ public class City {
     private String name;
     private String description;
     private Integer score;
+    private Date createdTime;
 
     public Long getId() {
         return id;
@@ -51,4 +54,13 @@ public class City {
     public void setScore(Integer score) {
         this.score = score;
     }
+
+    public Date getCreatedTime() {
+        return createdTime;
+    }
+
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
+    }
+
 }

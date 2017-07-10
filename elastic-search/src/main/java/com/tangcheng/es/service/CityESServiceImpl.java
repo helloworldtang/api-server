@@ -17,6 +17,7 @@ import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilde
 import org.springframework.data.elasticsearch.core.query.SearchQuery;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -34,6 +35,7 @@ public class CityESServiceImpl implements CityESService {
 
     @Override
     public Long saveCity(City city) {
+        city.setCreatedTime(new Date());
         City save = cityRepository.save(city);
         return save.getId();
     }
@@ -84,7 +86,7 @@ public class CityESServiceImpl implements CityESService {
 
     @Override
     public List<City> findByDescriptionLike(String description, PageQuery pageQuery) {
-        return cityRepository.findByDescriptionLike(description,pageQuery.getPageable()).getContent();
+        return cityRepository.findByDescriptionLike(description, pageQuery.getPageable()).getContent();
     }
 
 
